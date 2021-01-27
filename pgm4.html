@@ -1,35 +1,30 @@
-<!DOCTYPE html>
 <html>
-<head><title> PROGRAM 4 </title> </head>
+
 <body>
 	<script>
-    function s(str)
-	{
-		str = str.toLowerCase();
-		for(let i = 0 ; i < str.length; i++)
-			if((str[i]=='a')||(str[i]=='e')||(str[i]=='i')||(str[i]=='o')||(str[i]=='u'))
-				return i+1;
-         return 'NOT FOUND';
-	}
-	function n(num)
-	{
-		if(!(isNaN(num)))
+		var str = prompt("enter the input") ;
+		if( !isNaN(str) )
 		{
-			num = String(num.trim());
-			num = num.split('');
-			num = num.reverse();
-			num = num.join('');
-			return num;
+			var num = 0 , rev = 0 , rem = 0 ;
+			num = parseInt(str) ;
+			while(num != 0 )
+			{
+				rem = num % 10 ;
+				num = parseInt(num / 10);
+				rev = rev * 10 + rem ;
+			}
+			alert("reverse of "+str+" is "+rev) ;
 		}
 		else
-           return 'Not a number';
-	}
-	let strings = prompt("Enter a string: ","");
-	let numbers = prompt("Enter a number: ","");
-    let s1 = s(strings);
-    alert("The position of the leftmost vowel is " + s1);
-	let n1 = n(numbers);
-	alert("The reversed number is " + n1);
-	</script>
+		{
+			i = str.search(/[aeiouAEIOU]/) ;
+			if( i != -1)
+				alert("the position of the left most vowel is "+(i+1))
+			else
+				alert("no vowel found in the string")
+		
+		}
+
+		</script>
 	</body>
 </html>
