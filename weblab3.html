@@ -1,41 +1,38 @@
-<!DOCTYPE HTML>
 <html>
-<head>
-  <style>
-      p{   
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: limegreen;
-      }
-    </style>  
-    </head>    
-    <body>
-    
-        <p id ="demo"></p>
-    <script>
-        var var1 =setInterval(inTimer,1000);
-        var fs =5;
-        var ids =document.getElementById("demo");
-        function inTimer(){
-            ids.innerHTML="TEXT GROWING";
-            ids.setAttribute('style',"font-size:" + fs + "px; color:black");
-            fs += 5;
-            if(fs >= 50){
-                
-                clearInterval(var1);
-                var2 =setInterval(deTimer, 1000); 
-            }
-        }
-        function deTimer(){
-            fs-=5;
-            ids.innerHTML ='TEXT SHRINKING';
-            ids.setAttribute('style',"font-size:" + fs + "px; color:blue");
-            if(fs === 5){
-                clearInterval(var2);
-            }
-        }
-      </script>
-  </body>
+<body>
+<div style="margin-top: 200px;" align="center">
+<h1 style="font-size: 5px; color: red;"></h1>
+</div>
+<script>
+	var text = document.querySelector('h1');
+	var font = 5;
+	var flag = 0;
+	function inc(){
+		font++;
+		text.style.fontSize = font;
+		text.style.color = "red";
+		text.textContent="TEXT-GROWING";
+		if(font==50){
+		flag=1;
+		}
+	}
+	function dec(){
+		font--;
+		text.style.fontSize = font;
+		text.style.color = "blue";
+		text.textContent="TEXT-SHRINKING";
+		if(font==5){
+		flag=0;
+		}
+	}
+	var time = setInterval(function(){
+		if(flag==1){
+			dec();
+		}
+		if(flag==0){
+			inc();
+		}
+	}, 100);
+</script>
+</body>
 </html>
