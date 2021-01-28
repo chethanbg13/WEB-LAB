@@ -1,28 +1,35 @@
-<html><head>
-    <header>Square's &amp; Cube's of Integers</header>
-<script src="square.js"></script>
+<html>
+    <head>
   
 <style>
-    header{
-        color:deeppink;
-        font-size: 40px;
-        text-align: center;
-        
-    }
-    table,tr,td {
-        border:solid pink;
+    
+    table,tr,td 
+    {
+        border:solid black;
         width:33% ;
         text-align:center;
         border-collapse: collapse;
         background-color:hotpink;
-        margin-left: 33%;
-        margin-top: 10%;
-        font-size: 20px;
-
+     
+        
     }
     
-</style></head>
-    </html>
+</style>
+
+<script>
+    document.write("<table><tr><thcolspan='3'>NUMBERS FROM 0 to 10 with THEIR SQUARES AND CUBES</th></tr>");
+        document.write("<tr><td>Number</td><td>Square</td><td>CUBE</td></tr>");
+        for(var n=0;n<=10;n++)
+        {
+            document.write("<tr><td>"+n+"</td><td>"+n*n+"</td><td>"+n*n*n+"</td></tr>");
+        }
+        document.write("</table>");
+    
+
+        
+</script>
+</head>
+</html>
 
 
 
